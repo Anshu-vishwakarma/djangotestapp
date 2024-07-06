@@ -73,13 +73,24 @@ WSGI_APPLICATION = 'appdata.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 # Replace the SQLite DATABASES configuration with PostgreSQL:
+
 DATABASES = {
-    'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
-        conn_max_age=600
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mysite_caqw',
+        'USER': 'admin',
+        'PASSWORD': os.environ.get('mTzz1goGKxmLgn6A7HFEcAoZ5ZxFS1AM'),
+        'HOST': 'dpg-cq4kgm88fa8c73fr2230-a',
+        'PORT': '5432',
+    }
 }
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         # Replace this value with your local database's connection string.
+#         default='postgresql://postgres:postgres@localhost:5432/mysite',
+#         conn_max_age=600
+#     )
+# }
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
